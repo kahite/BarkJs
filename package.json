@@ -1,0 +1,14 @@
+{
+  "name": "BarkJs",
+  "version": "0.0.1",
+  "description": "Woof :p",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron ."
+  },
+  "author": "Yves",
+  "devDependencies": {
+    "electron": "^1.4.1",
+    "edge": "^6.5.1"
+  }
+}
