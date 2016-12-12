@@ -2,10 +2,13 @@ const {app, globalShortcut} = require('electron') // Electron
 const exec = require('child_process').exec // Exec
 const os = require('os') // OS
 const ostype = os.type()
+const fs = require('fs') // File System
+const files = fs.readdirSync('sounds')
 const characters = 'AZERTYUIOPQSDFGHJKLMWXVBN1234567890'
 
 // When application is ready
 app.on('ready', () => {
+  console.log(files)
   if(ostype == 'Linux') {
     registerShortcut(characters.split(''), playLinux)
   }
@@ -28,10 +31,10 @@ function registerShortcut(characters, callback) {
 
 let playWindows = function() {
   // Execute custom script to play sound in windows
-  exec('node play_sound_windows.js dog_bark_x.wav')
+  exec('node play_sound_windows.js sounds/dog_bark_x.wav')
 }
 
 let playLinux = function() {
   // Execute paplay to play sound in Linux
-  exec('paplay dog_bark_x.wav')
+  exec('paplay sounds/dog_bark_x.wav')
 }
