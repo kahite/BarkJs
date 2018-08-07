@@ -6,6 +6,9 @@
   "author": "Yves",
   "scripts": {
     "install": "node install_dependencies.js",
-    "start"  : "./node_modules/.bin/electron ."
+    "start": "./node_modules/.bin/electron ."
+  },
+  "dependencies": {
+    "electron": "^2.0.6"
   }
 }
